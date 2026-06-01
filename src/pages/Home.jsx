@@ -11,7 +11,7 @@ import CTA from '../components/CTA'
 import Footer from '../components/Footer'
 import Icon from '../components/Icon'
 import { useFeaturedPackages } from '../hooks/usePackages'
-import { destinations } from '../data/destinations'
+import { gurdwaras } from '../data/gurdwaras'
 import { testimonials } from '../data/testimonials'
 
 const faqItems = [
@@ -103,21 +103,24 @@ export default function Home() {
                 Destinations in Pakistan
               </h2>
             </div>
-            <button className="flex items-center gap-2 border border-white/20 text-white/70 hover:border-accent hover:text-accent text-sm px-6 py-3 rounded-xl transition-all duration-200 flex-shrink-0">
+            <button
+              onClick={() => navigate('/destinations')}
+              className="flex items-center gap-2 border border-white/20 text-white/70 hover:border-accent hover:text-accent text-sm px-6 py-3 rounded-xl transition-all duration-200 flex-shrink-0"
+            >
               Explore All
               <Icon name="arrow" size={14} color="currentColor" />
             </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* Featured (tall) */}
+            {/* Featured (tall) — Kartarpur Sahib */}
             <div className="flex flex-col gap-5">
-              <DestinationCard dest={destinations[0]} featured />
+              <DestinationCard dest={gurdwaras[0]} featured />
             </div>
-            {/* Three smaller */}
-            <div className="flex flex-col gap-5">
-              {destinations.slice(1).map(d => (
-                <DestinationCard key={d.name} dest={d} />
+            {/* Remaining five — compact stack */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {gurdwaras.slice(1).map(d => (
+                <DestinationCard key={d.id} dest={d} />
               ))}
             </div>
           </div>

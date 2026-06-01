@@ -8,6 +8,8 @@ import Packages from './pages/Packages'
 import PackageDetails from './pages/PackageDetails'
 import Booking from './pages/Booking'
 import About from './pages/About'
+import Destinations from './pages/Destinations'
+import DestinationDetail from './pages/DestinationDetail'
 
 // Admin
 import Login from './pages/admin/Login'
@@ -25,6 +27,8 @@ export default function App() {
         <Route path="/packages/:id" element={<PackageDetails />} />
         <Route path="/booking/:id" element={<Booking />} />
         <Route path="/about" element={<About />} />
+        <Route path="/destinations" element={<Destinations />} />
+        <Route path="/destinations/:id" element={<DestinationDetail />} />
 
         {/* Admin auth */}
         <Route path="/admin/login" element={<Login />} />
