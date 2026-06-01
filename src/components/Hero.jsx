@@ -14,20 +14,20 @@ export default function Hero() {
   const navigate = useNavigate()
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 md:pt-32 lg:pt-36 pb-16">
       <GurdwaraBg />
 
       {/* Overlay — darkened for text legibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-[860px] px-6 md:px-10">
+      <div className="relative z-10 text-center max-w-[860px] px-6 md:px-10 w-full">
 
-        {/* Logo */}
+        {/* Logo — responsive width, always sits cleanly below the fixed navbar */}
         <img
           src={logoLight}
           alt="Kartarpur Journey"
-          className="h-24 md:h-28 lg:h-32 w-auto object-contain mx-auto mb-8 mt-10 drop-shadow-[0_0_25px_rgba(255,215,0,0.25)]"
+          className="w-48 md:w-72 lg:w-96 h-auto object-contain mx-auto mb-8 drop-shadow-[0_0_25px_rgba(255,215,0,0.25)]"
         />
 
         <h1
