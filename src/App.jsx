@@ -10,6 +10,9 @@ import Booking from './pages/Booking'
 import About from './pages/About'
 import Destinations from './pages/Destinations'
 import DestinationDetail from './pages/DestinationDetail'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
+import CookiePolicy from './pages/CookiePolicy'
 
 // Admin
 import Login from './pages/admin/Login'
@@ -29,6 +32,11 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/destinations/:id" element={<DestinationDetail />} />
+
+        {/* Legal */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
 
         {/* Admin auth */}
         <Route path="/admin/login" element={<Login />} />

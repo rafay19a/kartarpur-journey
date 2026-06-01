@@ -3,6 +3,20 @@ import GurdwaraBg from './GurdwaraBg'
 import Icon from './Icon'
 import logoLight from '../assets/logo-light.png'
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Hero background image
+// Drop your custom image at:  src/assets/hero/hero-background.jpg
+// (also accepts .jpeg / .png / .webp with the same filename stem).
+// Vite picks it up automatically on the next dev reload / build — no code
+// change required. If the file is missing, the hero falls back to the
+// animated <GurdwaraBg /> so the build never breaks.
+// ─────────────────────────────────────────────────────────────────────────────
+const heroBgModules = import.meta.glob(
+  '../assets/hero/hero-background.{jpg,jpeg,png,webp}',
+  { eager: true, import: 'default' }
+)
+const heroBackground = Object.values(heroBgModules)[0]
+
 const stats = [
   { value: '12,000+', label: 'Pilgrims Served' },
   { value: '98%', label: 'Satisfaction Rate' },
@@ -15,7 +29,21 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 md:pt-32 lg:pt-36 pb-16">
-      <GurdwaraBg />
+      {/* Background — custom hero image if present, else animated SVG fallback */}
+      {heroBackground ? (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full"
+          style={{
+            backgroundImage: `url(${heroBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+      ) : (
+        <GurdwaraBg />
+      )}
 
       {/* Overlay — darkened for text legibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />

@@ -4,7 +4,7 @@ import Icon from './Icon'
 import logoDark from '../assets/logo-dark.png'
 
 const navLinks = [
-  { label: 'Destinations', to: '/#destinations' },
+  { label: 'Destinations', to: '/destinations' },
   { label: 'Packages', to: '/packages' },
   { label: 'About Us', to: '/about' },
 ]
