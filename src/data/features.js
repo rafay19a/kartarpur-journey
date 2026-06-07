@@ -15,8 +15,8 @@ export const features = [
     desc: 'Serving the Sangat since 2012 with 12,000+ pilgrims',
   },
   {
-    icon: 'check',
-    title: 'Visa Assistance',
-    desc: 'Complete Pakistan visa support for UK & Canada residents',
+    icon: 'star',
+    title: 'Authentic Pilgrimage Experiences',
+    desc: 'Carefully curated Sikh heritage journeys designed with comfort, devotion and cultural understanding.',
   },
 ]

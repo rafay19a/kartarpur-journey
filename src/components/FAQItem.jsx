@@ -24,7 +24,7 @@ export default function FAQItem({ q, a }) {
       </button>
 
       {open && (
-        <div className="px-6 pb-5 pt-4 text-sm text-slate-500 leading-relaxed border-t border-slate-100">
+        <div className="px-6 pb-5 pt-4 text-[15px] text-slate-600 leading-[1.75] border-t border-slate-100">
           {a}
         </div>
       )}

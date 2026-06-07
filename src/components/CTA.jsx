@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import logoLight from '../assets/logo-light.png'
+import { whatsappUrl } from '../lib/contact'
 
 const WhatsAppIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
@@ -21,16 +22,16 @@ export default function CTA() {
         <h2 className="font-cormorant text-white font-semibold text-[clamp(28px,4vw,48px)] leading-snug mb-4">
           Ready to Begin Your Sacred Journey?
         </h2>
-        <p className="text-white/65 text-base mb-10">
+        <p className="text-white/70 text-base leading-[1.7] mb-10 max-w-md mx-auto">
           Speak with our pilgrimage consultants on WhatsApp — available 7 days a week
         </p>
 
         <div className="flex gap-4 justify-center flex-wrap">
           <a
-            href="https://wa.me/923357111133"
+            href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-[#25D366] text-white font-semibold text-[15px] px-10 py-4 rounded-[14px] no-underline shadow-[0_8px_32px_rgba(37,211,102,0.4)] hover:-translate-y-0.5 transition-transform duration-200"
+            className="btn btn-whatsapp"
           >
             <WhatsAppIcon />
             Chat on WhatsApp
@@ -38,7 +39,7 @@ export default function CTA() {
 
           <button
             onClick={() => navigate('/packages')}
-            className="bg-gold-gradient text-navy font-semibold text-[15px] px-10 py-4 rounded-[14px] shadow-gold-lg hover:-translate-y-0.5 transition-transform duration-200"
+            className="btn btn-gold"
           >
             Browse All Packages
           </button>

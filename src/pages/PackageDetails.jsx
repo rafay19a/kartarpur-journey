@@ -223,7 +223,7 @@ export default function PackageDetails() {
 
               <button
                 onClick={() => navigate(`/booking/${pkg.id}`)}
-                className="w-full bg-gold-gradient text-navy font-semibold text-[15px] py-4 rounded-[14px] shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all duration-200 mb-4"
+                className="btn btn-gold w-full mb-4"
               >
                 Book This Package
               </button>

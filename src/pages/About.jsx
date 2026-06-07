@@ -6,6 +6,7 @@ import FAQItem from '../components/FAQItem'
 import CTA from '../components/CTA'
 import Footer from '../components/Footer'
 import Icon from '../components/Icon'
+import Stat from '../components/Stat'
 
 const values = [
   { icon: 'heart', title: 'Seva (Selfless Service)', desc: 'Every interaction is rooted in the Sikh principle of selfless service to the Sangat.' },
@@ -66,15 +67,17 @@ export default function About() {
             <h2 className="font-cormorant text-navy font-semibold text-[clamp(28px,3.5vw,40px)] leading-snug mb-5">
               Built on Seva, Trusted by the Sangat
             </h2>
-            <p className="text-slate-500 text-base leading-relaxed mb-4">
-              This is a joint venture of Homeland Group and Roameo Hospitalities, created to provide a seamless, spiritually enriching Sikh pilgrimage experience in Pakistan.
-            </p>
-            <p className="text-slate-500 text-base leading-relaxed mb-4">
-              Backed by the operational strength of Homeland Group and the healthcare excellence of Roameo Hospitalities, we ensure every journey is managed with care, safety, and deep respect for Sikh heritage.
-            </p>
-            <p className="text-slate-500 text-base leading-relaxed">
-              Our mission is to offer well-organized, comfortable, and meaningful yatra experiences, connecting pilgrims from around the world to the sacred sites of Sikh history.
-            </p>
+            <div className="prose-luxury">
+              <p>
+                This is a joint venture of Homeland Group and Roameo Hospitalities, created to provide a seamless, spiritually enriching Sikh pilgrimage experience in Pakistan.
+              </p>
+              <p>
+                Backed by the operational strength of Homeland Group and the healthcare excellence of Roameo Hospitalities, we ensure every journey is managed with care, safety, and deep respect for Sikh heritage.
+              </p>
+              <p>
+                Our mission is to offer well-organized, comfortable, and meaningful yatra experiences, connecting pilgrims from around the world to the sacred sites of Sikh history.
+              </p>
+            </div>
           </div>
 
           {/* Stats */}
@@ -85,10 +88,7 @@ export default function About() {
               { value: '98%', label: 'Satisfaction Rate' },
               { value: '8', label: 'Sacred Sites' },
             ].map(({ value, label }) => (
-              <div key={label} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 text-center">
-                <p className="font-cormorant text-3xl font-bold text-accent mb-1">{value}</p>
-                <p className="text-xs text-slate-400">{label}</p>
-              </div>
+              <Stat key={label} value={value} label={label} variant="light" />
             ))}
           </div>
         </div>

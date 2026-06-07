@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import GurdwaraBg from './GurdwaraBg'
 import Icon from './Icon'
+import Stat from './Stat'
 import logoLight from '../assets/logo-light.png'
+import { whatsappUrl } from '../lib/contact'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Hero background image
@@ -74,16 +76,16 @@ export default function Hero() {
         <div className="flex gap-4 justify-center mb-14 flex-wrap">
           <button
             onClick={() => navigate('/packages')}
-            className="bg-gold-gradient text-navy font-semibold text-[15px] px-9 py-4 rounded-[14px] shadow-gold-lg hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(200,169,81,0.7)] transition-all duration-200"
+            className="btn btn-gold"
           >
             Explore Packages
           </button>
 
           <a
-            href="https://wa.me/923357111133"
+            href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2.5 bg-white/8 backdrop-blur-sm text-white border border-white/35 text-[15px] font-medium px-9 py-4 rounded-[14px] hover:bg-white/15 hover:border-white/60 transition-all duration-200 no-underline"
+            className="btn btn-whatsapp"
           >
             <Icon name="phone" size={16} color="white" />
             Contact on WhatsApp
@@ -93,13 +95,7 @@ export default function Hero() {
         {/* Stats */}
         <div className="flex gap-4 justify-center flex-wrap">
           {stats.map(({ value, label }) => (
-            <div
-              key={label}
-              className="bg-white/8 backdrop-blur-sm border border-accent/20 rounded-2xl px-7 py-4 text-center"
-            >
-              <div className="text-accent text-[28px] font-bold font-cormorant leading-none">{value}</div>
-              <div className="text-white/60 text-xs mt-1 tracking-wide">{label}</div>
-            </div>
+            <Stat key={label} value={value} label={label} variant="dark" />
           ))}
         </div>
       </div>
