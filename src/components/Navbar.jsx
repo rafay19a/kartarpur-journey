@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Icon from './Icon'
-import logoDark from '../assets/logo-dark.png'
+import logoLight from '../assets/logo-light.png'
 
 const navLinks = [
   { label: 'Destinations', to: '/destinations' },
@@ -21,7 +21,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center no-underline flex-shrink-0">
           <img
-            src={logoDark}
+            src={logoLight}
             alt="Kartarpur Journey"
             className="h-11 md:h-12 w-auto object-contain mr-4"
           />
@@ -33,7 +33,7 @@ export default function Navbar() {
             <Link
               key={label}
               to={to}
-              className="text-gray-800 hover:text-accent text-sm tracking-wide font-medium transition-colors duration-200 no-underline"
+              className="text-white/90 hover:text-accent text-sm tracking-wide font-medium transition-colors duration-200 no-underline"
             >
               {label}
             </Link>
@@ -42,7 +42,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4">
-          <Link to="/about" className="text-gray-700 hover:text-gray-900 text-sm transition-colors no-underline">
+          <Link to="/about" className="text-white/75 hover:text-white text-sm transition-colors no-underline">
             Sign In
           </Link>
           <Link
@@ -55,23 +55,23 @@ export default function Navbar() {
 
         {/* Mobile menu toggle */}
         <button
-          className="md:hidden text-gray-800 p-1"
+          className="md:hidden text-white p-1"
           onClick={() => setMenuOpen(o => !o)}
           aria-label="Toggle menu"
         >
-          <Icon name={menuOpen ? 'x' : 'menu'} size={24} color="#1f2937" />
+          <Icon name={menuOpen ? 'x' : 'menu'} size={24} color="#ffffff" />
         </button>
       </div>
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="relative md:hidden border-t border-white/50 px-5 py-4 flex flex-col gap-4">
+        <div className="relative md:hidden border-t border-white/15 px-5 py-4 flex flex-col gap-4">
           {navLinks.map(({ label, to }) => (
             <Link
               key={label}
               to={to}
               onClick={() => setMenuOpen(false)}
-              className="text-gray-800 hover:text-accent text-base py-1 transition-colors no-underline font-medium"
+              className="text-white/90 hover:text-accent text-base py-1 transition-colors no-underline font-medium"
             >
               {label}
             </Link>
