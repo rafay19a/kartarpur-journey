@@ -13,15 +13,17 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
-      <div className="flex items-center justify-between h-[72px] px-6 md:px-12 max-w-screen-xl mx-auto">
+    <nav className="glass-nav fixed top-3 inset-x-3 md:inset-x-6 z-50 max-w-screen-xl mx-auto">
+      <div className="glass-smoke" aria-hidden="true"><span /><span /></div>
+      {/* 60px tall + 12px offset keeps the existing top-[72px] sticky bars aligned */}
+      <div className="relative flex items-center justify-between h-[60px] px-5 md:px-8">
 
         {/* Logo */}
         <Link to="/" className="flex items-center no-underline flex-shrink-0">
           <img
             src={logoDark}
             alt="Kartarpur Journey"
-            className="h-12 md:h-14 lg:h-16 w-auto object-contain mr-4"
+            className="h-11 md:h-12 w-auto object-contain mr-4"
           />
         </Link>
 
@@ -63,7 +65,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 shadow-lg">
+        <div className="relative md:hidden border-t border-white/50 px-5 py-4 flex flex-col gap-4">
           {navLinks.map(({ label, to }) => (
             <Link
               key={label}
